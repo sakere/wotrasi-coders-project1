@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+<title>Login form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../layout/styles/registration.css" rel="stylesheet" type="text/css" media="all">
+
+
+<script type="text/javascript">
+	var app = angular.module("LoginApp", []);
+
+	//Controller Part
+	app.controller("LoginController", function($scope, $http) {
+
+		$scope.registerLogin = function() {
+			try {
+				alert($scope.username+"====="+$scope.password+"======"+$scope.email)
+				 $http.post("/Training/rest/services/registration?username="+$scope.username+"&password="+$scope.password+"&email="+$scope.email).then(
+						function(response) {
+							$scope.values = response.data;
+							alert("========"+$scope.values)
+						}) 
+			} catch (err) {
+				alert(err);
+			}
+		};
+
+	});
+</script>
+
+</head>
+<body ng-app="LoginApp" ng-controller="LoginController">
+
+
+
+<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Remote QA<span>Mentors</span></div>
+		</div>
+		<div>
+		
+		<fieldset class="container">
+  <legend><i class="fa fa-empire fa-4x"></i></legend>
+  <div class="wrapper">
+    <label for="tbUnm" class="lbl-tb"><i class="fa fa-user fa-fw"></i> Username</label>
+    <br />
+    <input id="tbUnm" type="text" class="frm-ctrl tb" spellcheck="false" autocomplete="off" ng-model="username"/>
+    <p class="hint">This name will be your unique identity on the website</p>
+  </div>
+  <div class="wrapper">
+    <label for="tbEmail" class="lbl-tb"><i class="fa fa-envelope-o fa-fw"></i> Email</label>
+    <br />
+    <input id="tbEmail" type="text" class="frm-ctrl tb" spellcheck="false" autocomplete="off" ng-model="email"/>
+    <p class="hint">We will be using this email address to contact you and recover your password if you forget it</p>
+  </div>
+  <div class="wrapper">
+    <label for="tbPwd1" class="lbl-tb"><i class="fa fa-unlock fa-fw"></i> Password</label>
+    <br />
+    <input id="tbPwd1" type="password" class="frm-ctrl tb" ng-model="password"/>
+    <p class="hint">The password should have at least lowercase characters, uppercase characters, numbers and symbols</p>
+  </div>
+  <div class="wrapper">
+    <label for="tbPwd2" class="lbl-tb"><i class="fa fa-unlock fa-fw"></i> Confirm password</label>
+    <br />
+    <input id="tbPwd2" type="password" class="frm-ctrl tb" ng-model="cnfpassword"/>
+    <p class="hint">Repeat the above password</p>
+  </div>
+  <div class="wrapper">
+    <input type="button" class="frm-ctrl btn" ng-click="registerLogin()" value="Submit"/>
+  </div>
+</fieldset>
+		
+		</div>
+		
+		</body>
+		</html>
+	

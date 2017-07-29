@@ -1,0 +1,57 @@
+@CHARSET "ISO-8859-1";
+/* TOGGLE */
+#slidebox {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	display: block;
+	width: 100%;
+}
+
+#toggle {
+	height: 50px;
+	padding: 0;
+	position: relative;
+	background: #0292a8;
+	display: none;
+	text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+	#toggle {
+		display: block;
+	}
+}
+
+#toggle a {
+	position: absolute;
+	text-decoration: none;
+	line-height: 50px;
+	font-size: 16px;
+	color: #fff;
+}
+
+#box {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+@media screen and (max-width: 640px) {
+	#box {
+		display: none;
+	}
+}
+
+#slidebox:target #box {
+	min-height: 100%;
+	display: block;
+	opacity: 1;
+}
+
+#slidebox:target .top {
+	pointer-events: none;
+	display: none;
+}
