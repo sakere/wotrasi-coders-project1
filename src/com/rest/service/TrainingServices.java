@@ -36,10 +36,12 @@ public class TrainingServices {
 	@POST
 	@Path("/registration")
 	@Produces(MediaType.APPLICATION_XML)
-	public String registration(@QueryParam("username") String inUsername, @QueryParam("password") String inPassword,@QueryParam("email") String inEmail) {
+	public String registration(@QueryParam("username") String inUsername, @QueryParam("password") String inPassword,@QueryParam("email") String inEmail,@QueryParam("phone") String inPhone) {
 		String value = "";
 		try {
-			System.out.println(inUsername+"======"+inPassword+"========"+inEmail);
+			System.out.println(inUsername+"======"+inPassword+"========"+inEmail+"==="+inPhone);
+			
+			
 			if(inUsername.hashCode() == "admin".hashCode() && inPassword.hashCode() == "admin".hashCode() ){
 				value = "true";
 			}else{

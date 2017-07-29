@@ -16,8 +16,8 @@
 
 		$scope.registerLogin = function() {
 			try {
-				alert($scope.username+"====="+$scope.password+"======"+$scope.email)
-				 $http.post("/Training/rest/services/registration?username="+$scope.username+"&password="+$scope.password+"&email="+$scope.email).then(
+				alert($scope.username+"====="+$scope.password+"======"+$scope.email+"===="+$scope.phone)
+				 $http.post("/Training/rest/services/registration?username="+$scope.username+"&password="+$scope.password+"&email="+$scope.email+"&phone="+$scope.phone).then(
 						function(response) {
 							$scope.values = response.data;
 							alert("========"+$scope.values)
@@ -55,6 +55,12 @@
     <br />
     <input id="tbEmail" type="text" class="frm-ctrl tb" spellcheck="false" autocomplete="off" ng-model="email"/>
     <p class="hint">We will be using this email address to contact you and recover your password if you forget it</p>
+  </div>
+   <div class="wrapper">
+    <label for="tbPhone" class="lbl-tb"><i class="fa fa-envelope-o fa-fw"></i> Phone</label>
+    <br />
+    <input id="tbPhone" type="text" class="frm-ctrl tb" spellcheck="false" autocomplete="off" ng-model="phone"/>
+    <p class="hint">We will be using this phone address to contact you and recover your password if you forget it</p>
   </div>
   <div class="wrapper">
     <label for="tbPwd1" class="lbl-tb"><i class="fa fa-unlock fa-fw"></i> Password</label>

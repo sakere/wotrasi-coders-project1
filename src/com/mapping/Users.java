@@ -24,7 +24,9 @@ public class Users {
 	private String lastname;
 	@Column(name = "fldtype")
 	private int type;
-
+	@Column(name = "fldispaid")
+	private int fldispaid;
+	
 	public int getId() {
 		return id;
 	}
@@ -87,6 +89,14 @@ public class Users {
 
 	public void setType(int type) {
 		this.type = type;
+	}
+
+	public int getFldispaid() {
+		return fldispaid;
+	}
+
+	public void setFldispaid(int fldispaid) {
+		this.fldispaid = fldispaid;
 	}
 
 }

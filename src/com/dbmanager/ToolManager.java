@@ -14,14 +14,13 @@ public class ToolManager {
 	public static void main(String args[]) {
 		addRegistration();
 	}
-
+	
+	
+	
+	
 	public static String addRegistration() {
 		try {
-			Configuration configuration = new Configuration();
-			configuration.configure();
-			ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties())
-					.buildServiceRegistry();
-			SessionFactory SessionFactory = configuration.buildSessionFactory(serviceRegistry);
+			SessionFactory SessionFactory = HibernateUtil.getSessionFactory();
 			Session session = SessionFactory.openSession();
 			String SQL = "from Users";
 			Query TempQuery = session.createQuery(SQL);
