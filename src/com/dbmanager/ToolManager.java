@@ -16,7 +16,22 @@ public class ToolManager {
 	}
 	
 	
-	
+	public  String updateRegistration() {
+		try {
+			SessionFactory SessionFactory = HibernateUtil.getSessionFactory();
+			Session session = SessionFactory.openSession();
+			String SQL = "from Users";
+			//user login table
+			Query TempQuery = session.createQuery(SQL);
+			List TempList = TempQuery.list();
+			System.out.println(TempList);
+
+		} catch (Exception Ex) {
+			Ex.printStackTrace();
+		}
+		return null;
+
+	}
 	
 	public static String addRegistration() {
 		try {
