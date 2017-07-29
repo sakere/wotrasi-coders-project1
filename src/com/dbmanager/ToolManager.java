@@ -23,6 +23,7 @@ public class ToolManager {
 			SessionFactory SessionFactory = HibernateUtil.getSessionFactory();
 			Session session = SessionFactory.openSession();
 			String SQL = "from Users";
+			//user login table
 			Query TempQuery = session.createQuery(SQL);
 			List TempList = TempQuery.list();
 			System.out.println(TempList);
