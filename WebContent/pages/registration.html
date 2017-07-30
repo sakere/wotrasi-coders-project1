@@ -16,8 +16,9 @@
 
 		$scope.registerLogin = function() {
 			try {
-				alert($scope.username+"====="+$scope.password+"======"+$scope.email+"===="+$scope.phone)
-				 $http.post("/Training/rest/services/registration?username="+$scope.username+"&password="+$scope.password+"&email="+$scope.email+"&phone="+$scope.phone).then(
+				alert($scope.firstname+"====="+$scope.lastname+"======"+$scope.email+"===="+$scope.phone)
+				 $http.post("/Training/rest/services/demorequest?firstname="+$scope.firstname+"&lastname="+$scope.lastname
+						 +"&email="+$scope.email+"&phone="+$scope.phone).then(
 						function(response) {
 							$scope.values = response.data;
 							alert("========"+$scope.values)
@@ -44,6 +45,18 @@
 		
 		<fieldset class="container">
   <legend><i class="fa fa-empire fa-4x"></i></legend>
+  <div class="wrapper">
+    <label for="tbFirstName" class="lbl-tb"><i class="fa fa-unlock fa-fw"></i> First Name</label>
+    <br />
+    <input id="tbFirstName" type="text" class="frm-ctrl tb" ng-model="firstname"/>
+    <p class="hint">First Name</p>
+  </div>
+   <div class="wrapper">
+    <label for="tbLastName" class="lbl-tb"><i class="fa fa-unlock fa-fw"></i> Last Name</label>
+    <br />
+    <input id="tbLastName" type="text" class="frm-ctrl tb" ng-model="lastname"/>
+    <p class="hint">Last Name</p>
+  </div>
   <div class="wrapper">
     <label for="tbUnm" class="lbl-tb"><i class="fa fa-user fa-fw"></i> Username</label>
     <br />
