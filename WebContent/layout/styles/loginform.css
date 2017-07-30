@@ -19,9 +19,9 @@ body{
 	bottom: -40px;
 	width: auto;
 	height: auto;
-	background-image: url(http://www.ipwatchdog.com/wp-content/uploads/2017/04/software-businessman.jpg);
+	background-image: url('http://wallpapercave.com/wp/0Hz0RpM.jpg');
 	background-size: cover;
-	-webkit-filter: blur(5px);
+	-webkit-filter: blur(1px);
 	z-index: 0;
 }
 

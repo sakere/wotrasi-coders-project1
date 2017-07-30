@@ -1,52 +1,26 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
 <title>Login form</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/loginform.css" rel="stylesheet" type="text/css" media="all">
-
-
-<script type="text/javascript">
-	var app = angular.module("LoginApp", []);
-
-	//Controller Part
-	app.controller("LoginController", function($scope, $http) {
-
-		$scope.submitLogin = function() {
-			try {
-				alert($scope.uservalue+"====="+$scope.userpassword)
-				 $http.post("/Training/rest/services/validateLogin?username="+$scope.uservalue+"&password="+$scope.userpassword).then(
-						function(response) {
-							$scope.values = response.data;
-							alert("========"+$scope.values)
-						}) 
-			} catch (err) {
-				alert(err);
-			}
-		};
-
-	});
-</script>
-
 </head>
-<body ng-app="LoginApp" ng-controller="LoginController">
+<body>
 
 
 
 <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
-			<div>Remote QA<span>Mentors</span></div>
+			<div>Remote QA<span></span></div>
 		</div>
 		<br>
 		<div class="login">
-				<input type="text" placeholder="username" name="user" ng-model="uservalue"><br>
-				<input type="password" placeholder="password" name="password" ng-model="userpassword"><br>
-				<input type="button" value="Login" ng-click="submitLogin()">
+				<input type="text" placeholder="username" name="user"><br>
+				<input type="password" placeholder="password" name="password"><br>
+				<input type="button" value="Login">
 		</div>
-		
 		
 		</body>
 		</html>
